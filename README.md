@@ -1,28 +1,29 @@
-# names
+# adjective_adjective_animal
 
-[![Build Status](https://travis-ci.org/fnichol/names.svg?branch=master)](https://travis-ci.org/fnichol/names) [![](http://meritbadge.herokuapp.com/names)](https://crates.io/crates/names) [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fnichol/names/blob/master/LICENSE-MIT)
+[![Build Status](https://travis-ci.org/moparisthebest/adjective-adjective-animal.svg?branch=master)](https://travis-ci.org/moparisthebest/adjective-adjective-animal) [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moparisthebest/adjective-adjective-animal/blob/master/LICENSE-MIT)
 
-Random name generator for Rust
+Rust library to generate suitably random and reasonably unique human readable (and fairly adorable) ids,
+ala GiphyCat
 
-* Crate: https://crates.io/crates/names
-* Documentation http://fnichol.github.io/names/names/
-* Source Code: https://github.com/fnichol/names
+* Crate: https://crates.io/crates/adjective_adjective_animal
+* Documentation https://docs.rs/crate/adjective_adjective_animal
+* Source Code: https://github.com/moparisthebest/adjective-adjective-animal
 
 ## Usage
 
-This crate is [on crates.io](https://crates.io/crates/names) and can be
-used by adding `names` to your dependencies in your project's `Cargo.toml`
+This crate is [on crates.io](https://crates.io/crates/adjective_adjective_animal) and can be
+used by adding `adjective_adjective_animal` to your dependencies in your project's `Cargo.toml`
 file:
 
 ```toml
 [dependencies]
-names = "0.10.0"
+adjective_adjective_animal = "0.1.0"
 ```
 
 and this to your crate root:
 
 ```rust
-extern crate names;
+extern crate adjective_adjective_animal;
 ```
 
 ### Example: Painless defaults
@@ -31,43 +32,37 @@ The easiest way to get started is to use the default `Generator` to return
 a name:
 
 ```rust
-use names::{Generator, Name};
+use adjective_adjective_animal::Generator;
 
 fn main() {
-    let mut generator = Generator::with_naming(Name::Plain);
-
+    let mut generator = Generator::default();
     println!("Your project is: {}", generator.next().unwrap());
-    // #=> "Your project is: rusty-nail"
+    // #=> "Your project is: IndustrialSecretiveSwan"
+    
 }
-```
 
-If more randomness is required, you can generate a name with a trailing
-4-digit number:
-
-```rust
-use names::{Generator, Name};
-
-fn main() {
-    let mut generator = Generator::with_naming(Name::Numbered);
-    println!("Your project is: {}", generator.next().unwrap());
-    // #=> "Your project is: pushy-pencil-5602"
-}
 ```
 
 # Example: with custom dictionaries
 
-If you would rather supply your own custom adjective and noun word lists,
+If you would rather supply your own custom adjective and animal word lists,
 you can provide your own by supplying 2 string slices. For example,
 this returns only one result:
 
 ```
-use names::{Generator, Name};
+use adjective_adjective_animal::Generator;
 
 fn main() {
-    let adjectives = &["imaginary"];
-    let nouns = &["roll"];
-    let mut generator = Generator::new(adjectives, nouns, Name::Plain);
+    let adjectives = &["Imaginary"];
+    let animals = &["Bear"];
+    let mut generator = Generator::new(adjectives, animals);
 
-    assert_eq!("imaginary-roll", generator.next().unwrap());
+    assert_eq!("ImaginaryImaginaryBear", generator.next().unwrap());
 }
 ```
+
+# Credits
+  * rust's [names](https://github.com/fnichol/names) crate, which this is forked from
+  * npm's [adjective-adjective-animal](https://github.com/a-type/adjective-adjective-animal) for lists
+     * `curl 'https://raw.githubusercontent.com/a-type/adjective-adjective-animal/master/lib/lists/animals.js' | grep -Eo '"[^"]+"' | tr -d '"' | tr '[:upper:]' '[:lower:]' | sed 's/.*/\u&/' | sort | uniq > animals.txt`
+     * `curl 'https://raw.githubusercontent.com/a-type/adjective-adjective-animal/master/lib/lists/adjectives.js' | grep -Eo '"[^"]+"' | tr -d '"' | tr '[:upper:]' '[:lower:]' | sed 's/.*/\u&/' | sort | uniq > adjectives.txt`

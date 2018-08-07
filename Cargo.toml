@@ -1,23 +1,23 @@
 [package]
-name = "names"
-version = "0.11.0"
-authors = ["Fletcher Nichol <fnichol@nichol.ca>"]
+name = "adjective_adjective_animal"
+version = "0.1.0"
+authors = ["Travis Burtrum <admin.github@moparisthebest.com>", "Fletcher Nichol <fnichol@nichol.ca>"]
 license = "MIT"
 readme = "README.md"
-documentation = "http://fnichol.github.io/names/names/"
-repository = "https://github.com/fnichol/names.git"
-homepage = "https://github.com/fnichol/names.git"
-keywords = ["name", "random"]
+documentation = "https://github.com/moparisthebest/adjective-adjective-animal"
+repository = "https://github.com/moparisthebest/adjective-adjective-animal.git"
+homepage = "https://github.com/moparisthebest/adjective-adjective-animal"
+keywords = ["name", "random", "adjective", "animal"]
 description = """
-A library to generate random name strings suitable for use in container
-instances, project names, application instances, etc.
+A library to generate suitably random and reasonably unique human readable (and fairly adorable) ids,
+ala GiphyCat
 """
 exclude = ["cli"]
 build = "build.rs"
 
 [lib]
-name = "names"
+name = "adjective_adjective_animal"
 path = "src/lib.rs"
 
 [dependencies]
-rand = "0.3.0"
+rand = "0.5.4"

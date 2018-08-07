@@ -7,8 +7,8 @@ use std::path::Path;
 fn main() {
     generate(Path::new("data").join("adjectives.txt").as_path(),
              Path::new(&env::var("OUT_DIR").unwrap()).join("adjectives.rs").as_path());
-    generate(Path::new("data").join("nouns.txt").as_path(),
-             Path::new(&env::var("OUT_DIR").unwrap()).join("nouns.rs").as_path());
+    generate(Path::new("data").join("animals.txt").as_path(),
+             Path::new(&env::var("OUT_DIR").unwrap()).join("animals.rs").as_path());
 }
 
 fn generate(src_path: &Path, dst_path: &Path) {

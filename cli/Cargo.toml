@@ -1,21 +1,21 @@
 [package]
-name = "names-cli"
-version = "0.11.0"
-authors = ["Fletcher Nichol <fnichol@nichol.ca>"]
+name = "adjective_adjective_animal_cli"
+version = "0.1.0"
+authors = ["Travis Burtrum <admin.github@moparisthebest.com>", "Fletcher Nichol <fnichol@nichol.ca>"]
 license = "MIT"
-repository = "https://github.com/fnichol/names.git"
-homepage = "https://github.com/fnichol/names.git"
+repository = "https://github.com/moparisthebest/adjective-adjective-animal.git"
+homepage = "https://github.com/moparisthebest/adjective-adjective-animal"
 description = """
-A program to generate random names that look like 'used-jellyfish'.
+A program to generate random names that look like 'DeliriousHungryDolphin'.
 """
 
 [[bin]]
-name = "names"
+name = "aaa"
 path = "src/main.rs"
 
 [dependencies.clap]
 version = "~2.27"
 features = [ "suggestions", "color", "unstable" ]
 
-[dependencies.names]
+[dependencies.adjective_adjective_animal]
 path = ".."
