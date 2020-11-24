@@ -1,6 +1,6 @@
 # adjective_adjective_animal
 
-[![Build Status](https://travis-ci.org/moparisthebest/adjective-adjective-animal.svg?branch=master)](https://travis-ci.org/moparisthebest/adjective-adjective-animal) [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moparisthebest/adjective-adjective-animal/blob/master/LICENSE-MIT)
+[![Build Status](https://ci.moparisthe.best/job/moparisthebest/job/adjective-adjective-animal/job/master/badge/icon%3Fstyle=plastic)](https://ci.moparisthe.best/job/moparisthebest/job/adjective-adjective-animal/job/master/) [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moparisthebest/adjective-adjective-animal/blob/master/LICENSE-MIT)
 
 Rust library to generate suitably random and reasonably unique human readable (and fairly adorable) ids,
 ala GiphyCat
